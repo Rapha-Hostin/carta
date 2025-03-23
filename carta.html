@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style_carta.css">
+    <title>Carta</title>
+</head>
+<body>
+
+        <!-- Carta 1 -->
+        <div id="carta1" class="carta carta-ativa">
+            <h2>Carta 1</h2>
+            <p>Esta é a primeira carta. Clique para ir para a próxima.</p>
+            <button onclick="mostrarCarta('carta2')">Próxima</button>
+        </div>
+    
+        <!-- Carta 2 -->
+        <div id="carta2" class="carta">
+            <h2>Carta 2</h2>
+            <p>Esta é a segunda carta. Clique para voltar para a anterior ou ir para a próxima.</p>
+            <button onclick="mostrarCarta('carta1')">Anterior</button>
+            <button onclick="mostrarCarta('carta3')">Próxima</button>
+        </div>
+    
+        <!-- Carta 3 -->
+        <div id="carta3" class="carta">
+            <h2>Carta 3</h2>
+            <p>Esta é a terceira carta. Clique para voltar para a anterior.</p>
+            <button onclick="mostrarCarta('carta2')">Anterior</button>
+        </div>
+
+        <script>
+            // Função para mostrar uma carta e esconder as outras
+            function mostrarCarta(cartaId) {
+                // Esconde todas as cartas
+                const cartas = document.querySelectorAll('.carta');
+                cartas.forEach(carta => carta.classList.remove('carta-ativa'));
+    
+                // Mostra a carta selecionada
+                const carta = document.getElementById(cartaId);
+                carta.classList.add('carta-ativa');
+            }
+        </script>
+    
+    
+</body>
+</html>
